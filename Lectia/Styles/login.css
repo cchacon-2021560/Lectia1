@@ -6,8 +6,8 @@
 
 html {
     background-color: #FDFCE7;
-    padding: 50px;
-    padding-Top: 20px;
+    padding: clamp(20px, 5vw, 50px);
+    padding-top: clamp(10px, 2vw, 20px);
     scroll-behavior: smooth;
 }
 
@@ -18,7 +18,7 @@ html {
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .contenedor {
@@ -29,24 +29,24 @@ html {
     --color-fondo-alt: #FDFCE7;
     --color-principal: #0E4839;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;  
+    gap: clamp(10px, 3vw, 20px);
     text-align: center;
-    min-height: 100%; 
-    transform:translateY(-200px);
+    min-height: 100%;
+    transform: translateY(-200px);
 }
 
 .tituloLectia {
     color: #0E4839;
     font-family: kulture;
-    font-size: clamp(1.5rem, 6vw, 10rem);
+    font-size: clamp(1rem, 6vw, 2.5rem);
     display: flex;
-    gap: 20px;
-    letter-spacing: 5px;
-    margin-bottom: 20px;  
-    transform:translateY(200px);
+    gap: clamp(10px, 2vw, 20px);
+    letter-spacing: clamp(2px, 1vw, 5px);
+    margin-bottom: clamp(10px, 3vw, 20px);
+    transform: translateY(200px);
 }
 
 .tituloLetraLectia {
@@ -63,16 +63,16 @@ html {
 @keyframes descolor {
     0%,
     25% {
-      background-color: #efedc6;
+        background-color: #efedc6;
     }
     50% {
-      background-color: #f8f7e7;
+        background-color: #f8f7e7;
     }
     75% {
-      background-color: #f6efcd;
+        background-color: #f6efcd;
     }
     100% {
-      background-color: rgb(235, 226, 201);
+        background-color: rgb(235, 226, 201);
     }
 }
 
@@ -83,17 +83,17 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    width: 50px;
-    height: 20px;
+    gap: clamp(15px, 3vw, 30px);
+    width: clamp(40px, 10vw, 50px);
+    height: clamp(16px, 5vw, 20px);
 }
 
 .ladoTarjeta::before {
     position: absolute;
     content: 'Iniciar sesión';
-    left: -70px;
+    left: clamp(-80px, -15vw, -70px);
     top: 0;
-    width: 100px;
+    width: clamp(80px, 20vw, 100px);
     text-decoration: underline;
     color: var(--color-fuente);
     font-weight: 600;
@@ -102,9 +102,9 @@ html {
 .ladoTarjeta::after {
     position: absolute;
     content: 'Registrarse';
-    left: 70px;
+    left: clamp(50px, 12vw, 70px);
     top: 0;
-    width: 100px;
+    width: clamp(80px, 20vw, 100px);
     text-decoration: none;
     color: var(--color-fuente);
     font-weight: 600;
@@ -135,8 +135,8 @@ html {
     box-sizing: border-box;
     position: absolute;
     content: "";
-    height: 20px;
-    width: 20px;
+    height: clamp(16px, 5vw, 20px);
+    width: clamp(16px, 5vw, 20px);
     border: 2px solid var(--color-principal);
     border-radius: 5px;
     left: -2px;
@@ -147,11 +147,11 @@ html {
 }
 
 .toggle:checked + .deslizador {
-    background-color: var(-Input-focus);
+    background-color: var(--Input-focus);
 }
 
 .toggle:checked + .deslizador:before {
-    transform: translateX(30px);
+    transform: translateX(clamp(20px, 6vw, 30px));
 }
 
 .toggle:checked ~ .ladoTarjeta:before {
@@ -164,8 +164,8 @@ html {
 
 /* Tarjeta */
 .tarjetaInterna {
-    width: 300px;
-    height: 350px;
+    width: clamp(250px, 90vw, 300px);
+    height: clamp(300px, 80vh, 350px);
     position: relative;
     background-color: transparent;
     perspective: 1000px;
@@ -182,8 +182,9 @@ html {
     box-shadow: none;
 }
 
-.tarjetaFrontal, .tarjetaTrasera {
-    padding: 20px;
+.tarjetaFrontal,
+.tarjetaTrasera {
+    padding: clamp(10px, 3vw, 20px);
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -191,7 +192,7 @@ html {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background: lightgrey;
-    gap: 20px;
+    gap: clamp(10px, 3vw, 20px);
     border-radius: 5px;
     border: 2px solid var(--color-principal);
     box-shadow: 4px 4px var(--color-principal);
@@ -206,28 +207,28 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: clamp(10px, 3vw, 20px);
 }
 
 .titulo {
     margin: 20px 0;
-    font-size: 25px;
+    font-size: clamp(18px, 4vw, 25px);
     font-weight: 900;
     text-align: center;
     color: var(--color-principal);
 }
 
 .campoTarjeta {
-    width: 250px;
-    height: 40px;
+    width: clamp(200px, 80%, 250px);
+    height: clamp(30px, 8vw, 40px);
     border-radius: 5px;
     border: 2px solid var(--color-principal);
     background-color: var(--color-fondo);
     box-shadow: 4px 4px var(--color-principal);
-    font-size: 15px;
+    font-size: clamp(12px, 3vw, 15px);
     font-weight: 600;
     color: var(--color-fuente);
-    padding: 5px 10px;
+    padding: clamp(5px, 2vw, 10px);
     outline: none;
 }
 
@@ -237,7 +238,7 @@ html {
 }
 
 .campoTarjeta:focus {
-    border: 2px solid var(-Input-focus);
+    border: 2px solid var(--Input-focus);
 }
 
 .botonTarjeta:active {
@@ -247,59 +248,136 @@ html {
 
 .botonTarjeta {
     margin: 20px 0;
-    width: 120px;
-    height: 40px;
+    width: clamp(100px, 40%, 120px);
+    height: clamp(30px, 8vw, 40px);
     border-radius: 5px;
     border: 2px solid var(--color-principal);
     background-color: var(--color-fondo);
     box-shadow: 4px 4px var(--color-principal);
-    font-size: 17px;
+    font-size: clamp(14px, 3.5vw, 17px);
     font-weight: 600;
     color: var(--color-fuente);
     cursor: pointer;
 }
 
-@media (max-width: 768px) { 
-    .titulo {
-        font-size: 2rem; 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    html {
+        padding: clamp(10px, 3vw, 20px);
+        padding-top: clamp(5px, 1vw, 10px);
+    }
+
+    .contenedor {
+        gap: clamp(8px, 2vw, 15px);
+    }
+
+    .tituloLectia {
+        font-size: clamp(0.9rem, 5vw, 1.8rem);
+        gap: clamp(8px, 1.5vw, 15px);
+        letter-spacing: clamp(1px, 0.8vw, 3px);
+        margin-bottom: clamp(8px, 2vw, 15px);
+    }
+
+    .interruptor {
+        width: clamp(35px, 8vw, 45px);
+        height: clamp(14px, 4vw, 18px);
+        gap: clamp(10px, 2vw, 20px);
+    }
+
+    .ladoTarjeta::before {
+        left: clamp(-60px, -12vw, -50px);
+        width: clamp(60px, 15vw, 80px);
+        font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+    }
+
+    .ladoTarjeta::after {
+        left: clamp(40px, 10vw, 50px);
+        width: clamp(60px, 15vw, 80px);
+        font-size: clamp(0.7rem, 2.5vw, 0.9rem);
     }
 
     .tarjetaInterna {
-        width: 90%; 
+        width: clamp(220px, 85vw, 280px);
+        height: clamp(280px, 75vh, 330px);
     }
 
     .campoTarjeta {
-        width: 80%;   
-        font-size: 14px; 
+        width: clamp(180px, 75%, 230px);
+        font-size: clamp(11px, 2.5vw, 14px);
     }
 
     .botonTarjeta {
-        width: 80%; 
-        font-size: 16px;  
+        width: clamp(90px, 35%, 110px);
+        font-size: clamp(13px, 3vw, 16px);
     }
 }
 
-@media (max-width: 480px) { 
-    .titulo {
-        font-size: 1.5rem; 
+@media (max-width: 480px) {
+    html {
+        padding: clamp(5px, 2vw, 10px);
+        padding-top: clamp(3px, 1vw, 5px);
+    }
+
+    .contenedor {
+        gap: clamp(5px, 1.5vw, 10px);
+        transform: translateY(-100px); /* Slightly reduced for smaller screens */
+    }
+
+    .tituloLectia {
+        font-size: clamp(0.8rem, 4vw, 1.5rem);
+        flex-direction: column; /* Stack for small screens */
+        align-items: center;
+        gap: clamp(5px, 1vw, 10px);
+        letter-spacing: clamp(1px, 0.5vw, 2px);
+        margin-bottom: clamp(5px, 1.5vw, 10px);
+        transform: translateY(100px); /* Slightly reduced for smaller screens */
+    }
+
+    .interruptor {
+        width: clamp(30px, 7vw, 40px);
+        height: clamp(12px, 3.5vw, 16px);
+        gap: clamp(8px, 1.5vw, 15px);
+    }
+
+    .ladoTarjeta::before {
+        left: clamp(-50px, -10vw, -40px);
+        width: clamp(50px, 12vw, 70px);
+        font-size: clamp(0.6rem, 2vw, 0.8rem);
+    }
+
+    .ladoTarjeta::after {
+        left: clamp(35px, 8vw, 45px);
+        width: clamp(50px, 12vw, 70px);
+        font-size: clamp(0.6rem, 2vw, 0.8rem);
     }
 
     .tarjetaInterna {
-        width: 95%; 
+        width: clamp(200px, 90vw, 260px);
+        height: clamp(260px, 70vh, 320px);
     }
 
     .campoTarjeta {
-        width: 100%; 
-        font-size: 13px;
+        width: clamp(160px, 85%, 220px);
+        font-size: clamp(10px, 2vw, 13px);
     }
 
     .botonTarjeta {
-        width: 100%;  
-        font-size: 15px;
+        width: clamp(80px, 80%, 100px);
+        font-size: clamp(12px, 2.5vw, 15px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .tarjetaInterna {
+        width: clamp(300px, 30vw, 350px);
+        height: clamp(350px, 40vh, 400px);
     }
 
-    /* Ajustar el contenedor */
-    .contenedor {
-        padding: 10px; 
+    .campoTarjeta {
+        width: clamp(230px, 25vw, 270px);
+    }
+
+    .botonTarjeta {
+        width: clamp(110px, 15vw, 130px);
     }
 }
