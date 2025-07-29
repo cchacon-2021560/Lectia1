@@ -1,0 +1,351 @@
+.Libro{
+    background-color: /*#EDEFEF #fffafa #f0efe7;*/ #FDFCE7;
+}
+header{
+    position: relative;
+}
+
+/*-------------------Buscador----------------------*/
+.buscar {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+input {
+    font-family: inter;
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 16px;
+    outline: none;
+    background: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+    border-color: #0d0917;
+    box-shadow: 0 0 0 3px rgba(13, 9, 23, 0.2);
+}
+
+label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 0 6px;
+    color: gray;
+    font-size: 16px;
+    transition: 0.3s ease;
+    pointer-events: none;
+    font-family: inter;
+}
+
+input:focus + label,
+input:valid + label {
+    top: -4px;
+    left: 16px;
+    font-size: 12px;
+    color: #0d0917;
+    background-color:white;
+    transform: translateX(10px);
+}
+/*-----------------------------------------*/
+
+/*-------------------Menu----------------------*/
+.menu{
+    position: absolute;
+    left: 3%;
+    width: 50px;
+    height: 50px;
+    top: 1.5%;
+    cursor: pointer;
+}
+
+.menuIh{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    transform: translateY(50px);
+    width: 100%;
+    max-width: 7rem;
+    filter: drop-shadow(0.25rem 0.25rem 0.5rem #0005);
+    border-color:#0d0917;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menuIh a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: inter;
+    font-size: 13px;
+
+}
+
+.menuIh a:hover {
+    background-color: #f1f1f1;
+    transition: 0.5s;
+}
+
+.menuI:hover .menuIh {
+    display: block;
+}
+
+.menuI:hover .menu {
+    box-shadow:0 0 0 3px rgba(13, 9, 23, 0.2);
+}
+/*-----------------------------------------*/
+
+/*-------------------Libros destacados----------------------*/
+.destacado{
+    font-family: chill;
+    font-size: 45px;
+    line-height: 60px;
+    display: block;
+    transform: translateX(150px);
+}
+
+.destacado:hover{
+    cursor: default;
+    animation: big 1.3s both infinite alternate;
+}
+
+
+.libros{
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #083627;
+    border-radius: 16px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 40px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+
+.libros {
+    view-timeline-name: --mas;
+    animation-name: scroll;
+    animation-fill-mode: both;
+    animation-timeline: --mas;
+    animation-range: entry 30% cover 50%;
+}
+
+.stock {
+    display: flex;
+    gap: 30px;
+    background-color: #083627;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: auto;
+    color: #e0e0e0;
+    margin-bottom: 40px;
+}
+
+.stock {
+    view-timeline-name: --mas;
+    animation-name: scroll;
+    animation-fill-mode: both;
+    animation-timeline: --mas;
+    animation-range: entry 10% cover 60%;
+}
+
+.imgStock img {
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.temaLibro {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.libroTitulo {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #ffffff;
+    font-family: roboto;
+    }
+
+.descripcionLibro {
+    font-size: 15px;
+    color: #c0c0c0;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+
+.infoLibro p {
+    margin: 6px 0;
+    font-size: 15px;
+    font-family: roboto;
+    font-weight: bold;
+}
+
+.btnComprar {
+    align-self: flex-start;
+    padding: 12px 24px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.btnComprar:hover {
+    background-color: #3730a3;
+    box-shadow:   10px 10px 20px #151922, -10px -10px 20px #0d0917
+}
+
+.btnComprar:active{
+    box-shadow:  inset 10px 10px 20px #29218d, -10px -10px 20px #150f23;
+}
+/*-----------------------------------------*/
+
+/*-------------------Libros Meh----------------------*/
+.librosMeh {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.categoria {
+    font-family: roboto;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #333;
+    display: inline-block;
+}
+
+.librosHz {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+
+.libro {
+    min-width: 160px;
+    max-width: 160px;
+    flex-shrink: 0;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.libro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.imgLibro{
+    height: 200px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.tituloLibro {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.autorLibro {
+    font-family: inter;
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.etiqueta {
+    display: inline-block;
+    background-color: #25c025;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.precio {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.btnComp {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnComp:hover {
+    background-color: #333;
+}
+
+.librosHz::-webkit-scrollbar {
+    height: 6px;
+}
+
+.librosHz::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.librosHz::-webkit-scrollbar-track {
+    background: transparent;
+}
+/*-----------------------------------------*/
+
+/*-------------------ANIMACIONES----------------------*/
+@keyframes scroll {
+    from {
+        opacity: 0;
+        scale: 10%;
+    }
+
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+@keyframes big {
+from{
+    font-size: 50px;
+}
+}
+/*-----------------------------------------*/

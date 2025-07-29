@@ -1,0 +1,172 @@
+html {
+  background-color: #FDFCE7;
+  padding: 50px;
+  padding-top: 20px;
+  scroll-behavior: smooth;
+}
+
+.menuInicio {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 20px;
+  font-family: roboto;
+}
+
+.contenedorMenuIncio {
+  background-color: #0E4839;
+  padding: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 1);
+  border-radius: 30px;
+  width: auto;
+  height: auto;
+  border: none;
+  
+}
+
+.menuInicio li a {
+  text-decoration: none;
+  color: #fceec9;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.menuInicio li a:hover {
+  background-color: azure
+;
+  color: black;
+  box-shadow: 10px 10px 20px #151922, -10px -10px 20px #0d0917;
+}
+
+.menuInicio li a:active {
+  color: white;
+  background: #323441;
+  border-radius: 20px;
+  box-shadow: inset 10px 10px 20px #151922, -10px -10px 20px #0d0917;
+}
+
+.bienvenida {
+    display: flex;
+    gap: 30px;
+    background-color: #0E4839;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: auto;
+    color: #fceec9;
+    margin-bottom: 40px;
+}
+
+.subti{
+  font-family: chill ;c 
+  font-size: 30px;
+  max-width: 780px;
+  margin: 0;
+  text-align: left;
+  line-height: 60px;
+}
+
+.bienvenida {
+  view-timeline-name: --mas;
+  animation-name: scroll;
+  animation-fill-mode: both;
+  animation-timeline: --mas;
+  animation-range: entry 10% cover 70%;
+}
+
+.titulo {
+  color: #0E4839;
+  font-family: kulture;
+  font-size: clamp(1.5rem, 6vw, 10rem);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  letter-spacing: 5px;
+}
+.tituloLetra {
+  transition: background-color 0.5s;
+}
+.tituloLetra:hover {
+  box-shadow: 10px 10px 20px #151922, -10px -10px 20px #0d0917;
+  transition: 1.3s;
+  cursor: default;
+  animation: descolor 1.3s both infinite alternate;
+}
+
+.inicio {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.filosofia {
+  font-family: inter;
+  max-width: 780px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin: 0;
+  text-align: justify;
+}
+
+.pie {
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  z-index: 100;
+  background-color: rgba(13, 9, 23, 0.5);
+  fill-opacity: 0;
+}
+
+/*
+@keyframes descolor {
+  0%,
+  25% {
+    background-color: #042b1e;
+  }
+  50% {
+    background-color: #003826;
+  }
+  75% {
+    background-color: #063628;
+  }
+  100% {
+    background-color: #072b21;
+  }
+}*/
+
+@keyframes descolor {
+  0%,
+  25% {
+    background-color: #efedc6;
+  }
+  50% {
+    background-color: #f8f7e7;
+  }
+  75% {
+    background-color: #f6efcd;
+  }
+  100% {
+    background-color: rgb(235, 226, 201);
+  }
+}
+
+@keyframes scroll {
+  from {
+    opacity: 0;
+    scale: 10%;
+  }
+
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}

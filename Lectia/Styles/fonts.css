@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "inter";
+    src: url(../fonts/Inter_18pt-Bold.ttf) format("truetype");
+
+} 
+
+@font-face{
+        font-family: "roboto";
+    src: url(../fonts/RobotoCondensed-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face{
+    font-family:'kulture';
+    src: url(../fonts/TAN\ KULTURE-DISPLAY.otf);
+}
+
+@font-face{
+    font-family:'chill';
+    src: url(../fonts/Chillax-Variable.ttf) format("truetype");
+}

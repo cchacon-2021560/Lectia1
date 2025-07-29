@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #FDFCE7;
+    padding: 50px;
+    padding-Top: 20px;
+    scroll-behavior: smooth;
+}
+
+body,
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    flex-direction: column; 
+}
+
+.contenedor {
+    --Input-focus: #2d8cf0;
+    --color-fuente: #323232;
+    --color-fuente-sub: #0E4839;
+    --color-fondo: #fceec9;
+    --color-fondo-alt: #FDFCE7;
+    --color-principal: #0E4839;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 20px;  
+    text-align: center;
+    min-height: 100%; 
+    transform:translateY(-200px);
+}
+
+.tituloLectia {
+    color: #0E4839;
+    font-family: kulture;
+    font-size: clamp(1.5rem, 6vw, 10rem);
+    display: flex;
+    gap: 20px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;  
+    transform:translateY(200px);
+}
+
+.tituloLetraLectia {
+    transition: background-color 0.5s;
+}
+
+.tituloLetraLectia:hover {
+    box-shadow: 10px 10px 20px #151922, -10px -10px 20px #0d0917;
+    transition: 1.3s;
+    cursor: default;
+    animation: descolor 1.3s both infinite alternate;
+}
+
+@keyframes descolor {
+    0%,
+    25% {
+      background-color: #efedc6;
+    }
+    50% {
+      background-color: #f8f7e7;
+    }
+    75% {
+      background-color: #f6efcd;
+    }
+    100% {
+      background-color: rgb(235, 226, 201);
+    }
+}
+
+.interruptor {
+    transform: translateY(0);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 50px;
+    height: 20px;
+}
+
+.ladoTarjeta::before {
+    position: absolute;
+    content: 'Iniciar sesión';
+    left: -70px;
+    top: 0;
+    width: 100px;
+    text-decoration: underline;
+    color: var(--color-fuente);
+    font-weight: 600;
+}
+
+.ladoTarjeta::after {
+    position: absolute;
+    content: 'Registrarse';
+    left: 70px;
+    top: 0;
+    width: 100px;
+    text-decoration: none;
+    color: var(--color-fuente);
+    font-weight: 600;
+}
+
+.toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.deslizador {
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid var(--color-principal);
+    box-shadow: 4px 4px var(--color-principal);
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-fondo);
+    transition: 0.3s;
+}
+
+.deslizador:before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--color-principal);
+    border-radius: 5px;
+    left: -2px;
+    bottom: 2px;
+    background-color: var(--color-fondo);
+    box-shadow: 0 3px 0 var(--color-principal);
+    transition: 0.3s;
+}
+
+.toggle:checked + .deslizador {
+    background-color: var(-Input-focus);
+}
+
+.toggle:checked + .deslizador:before {
+    transform: translateX(30px);
+}
+
+.toggle:checked ~ .ladoTarjeta:before {
+    text-decoration: none;
+}
+
+.toggle:checked ~ .ladoTarjeta:after {
+    text-decoration: underline;
+}
+
+/* Tarjeta */
+.tarjetaInterna {
+    width: 300px;
+    height: 350px;
+    position: relative;
+    background-color: transparent;
+    perspective: 1000px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.toggle:checked ~ .tarjetaInterna {
+    transform: rotateY(180deg);
+}
+
+.toggle:checked ~ .tarjetaFrontal {
+    box-shadow: none;
+}
+
+.tarjetaFrontal, .tarjetaTrasera {
+    padding: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: lightgrey;
+    gap: 20px;
+    border-radius: 5px;
+    border: 2px solid var(--color-principal);
+    box-shadow: 4px 4px var(--color-principal);
+}
+
+.tarjetaTrasera {
+    width: 100%;
+    transform: rotateY(180deg);
+}
+
+.formularioTarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.titulo {
+    margin: 20px 0;
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+    color: var(--color-principal);
+}
+
+.campoTarjeta {
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--color-principal);
+    background-color: var(--color-fondo);
+    box-shadow: 4px 4px var(--color-principal);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-fuente);
+    padding: 5px 10px;
+    outline: none;
+}
+
+.campoTarjeta::placeholder {
+    color: var(--color-fuente-sub);
+    opacity: 0.8;
+}
+
+.campoTarjeta:focus {
+    border: 2px solid var(-Input-focus);
+}
+
+.botonTarjeta:active {
+    box-shadow: 0px 0px var(--color-principal);
+    transform: translate(3px, 3px);
+}
+
+.botonTarjeta {
+    margin: 20px 0;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--color-principal);
+    background-color: var(--color-fondo);
+    box-shadow: 4px 4px var(--color-principal);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-fuente);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) { 
+    .titulo {
+        font-size: 2rem; 
+    }
+
+    .tarjetaInterna {
+        width: 90%; 
+    }
+
+    .campoTarjeta {
+        width: 80%;   
+        font-size: 14px; 
+    }
+
+    .botonTarjeta {
+        width: 80%; 
+        font-size: 16px;  
+    }
+}
+
+@media (max-width: 480px) { 
+    .titulo {
+        font-size: 1.5rem; 
+    }
+
+    .tarjetaInterna {
+        width: 95%; 
+    }
+
+    .campoTarjeta {
+        width: 100%; 
+        font-size: 13px;
+    }
+
+    .botonTarjeta {
+        width: 100%;  
+        font-size: 15px;
+    }
+
+    /* Ajustar el contenedor */
+    .contenedor {
+        padding: 10px; 
+    }
+}
