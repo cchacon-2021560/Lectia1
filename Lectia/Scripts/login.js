@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     
     const form = document.querySelector('.formularioTarjeta');
@@ -13,8 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (email === '' || password === '') {
             alert('Por favor, complete todos los campos.');
         } else {
-          
-              window.location.href = "../principal.html"
+            window.location.href = "../principal.html"; 
         }
     });
 });
